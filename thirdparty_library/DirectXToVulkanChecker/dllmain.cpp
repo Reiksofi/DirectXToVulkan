@@ -11,14 +11,18 @@ DLLEXPORT bool __stdcall GetDX11DLL(widestring str) {
     if (st) {
         return false;
     }
-    blackbone::ProcessModules* mod_proc = 0;
-    blackbone::ModuleDataPtr moduledata_d3d11 = (blackbone::ModuleDataPtr)mod_proc->GetModule(L"d3d11.dll");
-    if (!moduledata_d3d11) {
-        printf("Failed to Find D3D9 Module!!!");
-        return false;
-    }
-    else {
-        return true;
+    else
+    {
+        blackbone::ProcessModules* mod_proc = 0;
+        blackbone::ModuleDataPtr moduledata_d3d11 = (blackbone::ModuleDataPtr)mod_proc->GetModule(L"d3d11.dll");
+        if (!moduledata_d3d11)
+        {
+            printf("Failed to Find D3D9 Module!!!");
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }
 DLLEXPORT bool __stdcall GetDX9DLL(widestring str) {
@@ -27,14 +31,17 @@ DLLEXPORT bool __stdcall GetDX9DLL(widestring str) {
     if (st) {
         return false;
     }
-    blackbone::ProcessModules* mod_proc = 0;
-    blackbone::ModuleDataPtr moduledata_d3d11 = (blackbone::ModuleDataPtr)mod_proc->GetModule(L"d3d9.dll");
-    if (!moduledata_d3d11) {
-        printf("Failed to Find D3D11 Module!!!");
-        return false;
-    }
     else {
-        return true;
+        blackbone::ProcessModules* mod_proc = 0;
+        blackbone::ModuleDataPtr moduledata_d3d11 = (blackbone::ModuleDataPtr)mod_proc->GetModule(L"d3d9.dll");
+        if (!moduledata_d3d11)
+        {
+            printf("Failed to Find D3D9 Module!!!");
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }
 BOOL APIENTRY DllMain( HMODULE hModule,
