@@ -14,7 +14,7 @@ DLLEXPORT bool __stdcall GetDX11DLL(widestring str) {
     blackbone::ProcessModules* mod_proc = 0;
     blackbone::ModuleDataPtr moduledata_d3d11 = (blackbone::ModuleDataPtr)mod_proc->GetModule(L"d3d11.dll");
     if (!moduledata_d3d11) {
-        printf("Failed to Find D3D11 Module!!!");
+        printf("Failed to Find D3D9 Module!!!");
         return false;
     }
     else {
